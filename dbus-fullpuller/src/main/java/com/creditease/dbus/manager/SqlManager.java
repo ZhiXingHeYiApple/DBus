@@ -37,42 +37,20 @@
  */
 package com.creditease.dbus.manager;
 
-import java.io.IOException;
-import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.sql.Statement;
-import java.sql.Timestamp;
-import java.sql.Types;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-import java.util.Properties;
-import java.util.TreeMap;
-
-import javax.sql.DataSource;
-
+import com.creditease.dbus.common.DataPullConstants;
+import com.creditease.dbus.common.splitters.DBSplitter;
+import com.creditease.dbus.common.utils.*;
+import com.creditease.dbus.commons.Constants;
+import com.creditease.dbus.enums.DbusDatasourceType;
 import org.apache.commons.lang.StringUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-import com.creditease.dbus.common.DataPullConstants;
-import com.creditease.dbus.common.splitters.DBSplitter;
-import com.creditease.dbus.common.utils.DBConfiguration;
-import com.creditease.dbus.common.utils.DataDrivenDBInputFormat;
-import com.creditease.dbus.common.utils.InputSplit;
-import com.creditease.dbus.common.utils.LoggingUtils;
-import com.creditease.dbus.common.utils.ResultSetPrinter;
-import com.creditease.dbus.common.utils.SqlTypeMap;
-import com.creditease.dbus.common.utils.ValidationException;
-import com.creditease.dbus.commons.Constants;
-import com.creditease.dbus.enums.DbusDatasourceType;
+import javax.sql.DataSource;
+import java.io.IOException;
+import java.io.PrintWriter;
+import java.sql.*;
+import java.util.*;
 
 /**
  * ConnManager implementation for generic SQL-compliant database.
@@ -1544,7 +1522,7 @@ public abstract class SqlManager
             }
             needComma = true;
         }
-        sqlStr.append(" WHERE SEQNO=?");
+        sqlStr.append(" WHERE ID=?");
         return sqlStr.toString();
     }
 
@@ -1588,7 +1566,7 @@ public abstract class SqlManager
             }
             needComma = true;
         }
-        sqlStr.append(" WHERE SEQNO=?");
+        sqlStr.append(" WHERE ID=?");
         return sqlStr.toString();
     }
 

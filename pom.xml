@@ -14,6 +14,9 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <scope.provided>provided</scope.provided>
+        <storm.version>1.2.2</storm.version>
+        <canal.client.version>1.1.1</canal.client.version>
+        <kafka.client.version>1.1.1</kafka.client.version>
         <!--<scope.provided>compile</scope.provided>-->
     </properties>
 
@@ -31,7 +34,6 @@
         <module>encoder-plugins</module>
         <module>dbus-router</module>
     </modules>
-
 
     <!--这里配置的依赖，在子模块中可以有选择的引用-->
     <dependencyManagement>
@@ -52,7 +54,7 @@
             <dependency>
                 <groupId>org.apache.storm</groupId>
                 <artifactId>storm-core</artifactId>
-                <version>1.0.1</version>
+                <version>${storm.version}</version>
                 <scope>${scope.provided}</scope>
                 <!-- 以下部分如果调试不过可以删除exclusions -->
                 <exclusions>
@@ -66,6 +68,11 @@
                         <artifactId>clojure</artifactId>
                     </exclusion>
                 </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.apache.storm</groupId>
+                <artifactId>storm-kafka</artifactId>
+                <version>${storm.version}</version>
             </dependency>
 
             <!-- https://mvnrepository.com/artifact/com.codahale.metrics/metrics-core -->
@@ -111,7 +118,7 @@
             <dependency>
                 <groupId>com.alibaba.otter</groupId>
                 <artifactId>canal.client</artifactId>
-                <version>1.0.22</version>
+                <version>${canal.client.version}</version>
                 <exclusions>
                     <exclusion>
                         <groupId>ch.qos.logback</groupId>
@@ -166,7 +173,7 @@
             <dependency>
                 <groupId>org.apache.kafka</groupId>
                 <artifactId>kafka-clients</artifactId>
-                <version>0.10.0.0</version>
+                <version>${kafka.client.version}</version>
             </dependency>
             <dependency>
                 <groupId>org.apache.zookeeper</groupId>

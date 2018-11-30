@@ -25,7 +25,7 @@
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <spring.version>4.3.13.RELEASE</spring.version>
-        <spring.boot.version>1.5.11.RELEASE</spring.boot.version>
+        <spring.boot.version>1.5.17.RELEASE</spring.boot.version>
         <spring.cloud.version>Dalston.SR5</spring.cloud.version>
         <start-class>define in sub module</start-class>
     </properties>
@@ -72,15 +72,18 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
+            <!--<version>${spring.boot.version}</version>-->
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-devtools</artifactId>
+            <!--<version>${spring.boot.version}</version>-->
             <optional>true</optional>
         </dependency>
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>
+            <!--<version>${spring.boot.version}</version>-->
             <scope>test</scope>
         </dependency>
     </dependencies>
@@ -99,7 +102,7 @@
                 <plugin>
                     <groupId>org.springframework.boot</groupId>
                     <artifactId>spring-boot-maven-plugin</artifactId>
-                    <version>1.5.10.RELEASE</version>
+                    <version>1.5.17.RELEASE</version>
                     <configuration>
                         <mainClass>${start-class}</mainClass>
                         <layout>JAR</layout>

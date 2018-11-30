@@ -64,7 +64,7 @@ public class MysqlGenericMessage implements IGenericMessage {
         int proCount = entry.getHeader().getPropsCount();
         if (proCount == 1) {
             CanalEntry.Pair pair = entry.getHeader().getProps(0);
-            if (pair.getKey().equals("rowCount"))
+            if (pair.getKey().equals("rowsCount"))   //修改前的值为rowCount
                 return Integer.parseInt(pair.getValue());
         }
 
