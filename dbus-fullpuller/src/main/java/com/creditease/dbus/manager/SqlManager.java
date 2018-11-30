@@ -1294,7 +1294,7 @@ public abstract class SqlManager
     public String getPhysicalTables() {
         String physicalTables = null;
         long seqNo = options.getLong(DBConfiguration.DATA_IMPORT_CONSISTENT_READ_SEQNO, 0L);
-        String sqlStr = "SELECT PHYSICAL_TABLES FROM DB_FULL_PULL_REQUESTS WHERE SEQNO=" + seqNo;
+        String sqlStr = "SELECT PHYSICAL_TABLES FROM DB_FULL_PULL_REQUESTS WHERE ID=" + seqNo;
 
         Connection conn = null;
         PreparedStatement pStmt = null;

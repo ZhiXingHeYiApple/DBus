@@ -119,7 +119,7 @@ public class InitialLoadService {
         PreparedStatement pst = null;
         try {
             String sql = "insert into db_full_pull_requests(" +
-                    "seqno," +
+                    "id," +
                     "schema_name," +
                     "table_name," +
                     "scn_no," +
@@ -174,7 +174,7 @@ public class InitialLoadService {
         PreparedStatement pst = null;
         try {
             String sql = "insert into db_full_pull_requests (" +
-                    "seqno," +
+                    "id," +
                     "schema_name," +
                     "table_name," +
                     "physical_tables," +
